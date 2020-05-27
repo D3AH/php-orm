@@ -1,0 +1,11 @@
+{
+    "require": {
+        "cycle/orm": "^1.2",
+        "cycle/annotated": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Example\\": "src/"
+        }
+    }
+}
