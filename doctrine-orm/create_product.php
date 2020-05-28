@@ -4,7 +4,7 @@ require_once "bootstrap.php";
 
 $newProductName = $argv[1];
 
-$product = new Product();
+$product = new Product(1);
 $product->setName($newProductName);
 
 $category = new Category();

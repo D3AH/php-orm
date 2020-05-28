@@ -7,10 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *      name="products",
- *      indexes={
- *          @ORM\Index(name="name_idx", columns={"name"})
- *      }
+ *      name="products"
  * )
  */
 class Product
@@ -18,11 +15,12 @@ class Product
     /** 
      * @ORM\Id
      * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
      */
     protected $id;
+
     /** 
-     * @ORM\Column(type="string") 
+     * @ORM\Id
+     * @ORM\Column(type="string", unique=true) 
      */
     protected $name;
 
@@ -31,7 +29,8 @@ class Product
      */
     protected $categories;
 
-    public function __construct() {
+    public function __construct($id) {
+        $this->id = $id;
         $this->categories = new ArrayCollection();
     }
 
