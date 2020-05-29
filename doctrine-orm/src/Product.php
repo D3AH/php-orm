@@ -2,6 +2,7 @@
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 
 /**
@@ -13,7 +14,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Product
 {
     /** 
-     * @ORM\Id
      * @ORM\Column(type="integer")
      */
     protected $id;
@@ -55,7 +55,7 @@ class Product
         $this->categories[] = $category;
     }
 
-    public function getCategories(): ArrayCollection
+    public function getCategories(): Collection
     {
         return $this->categories;
     }
